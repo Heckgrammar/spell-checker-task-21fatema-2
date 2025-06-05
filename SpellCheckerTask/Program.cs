@@ -32,6 +32,20 @@ namespace SpellCheckerTask
         }
         static string[] createDictionary()
         {
+            Console.WriteLine("Enter a word:");
+    string input = Console.ReadLine().ToLower();
+
+    if (Array.Exists(words, word => word == input))
+    {
+        Console.WriteLine($"'{input}' is spelled correctly.");
+    }
+    else
+    {
+        Console.WriteLine($"'{input}' is spelled incorrectly.");
+    }
+
+
+            
             using StreamReader words = new("WordsFile.txt");
             int count = 0;
             string[] dictionaryData = new string[178636];
